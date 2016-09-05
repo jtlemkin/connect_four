@@ -18,9 +18,7 @@ class Board
 	def is_won?
 		(0..5).each do |y|
 			@cols.each_with_index do |col, x|
-				if col[y]
-					return true if winning_combo?(x, y)
-				end
+				return true if col[y] && winning_combo?(x, y)
 			end
 		end
 
